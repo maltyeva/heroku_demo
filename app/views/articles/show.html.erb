@@ -1,14 +1,13 @@
+<%= image_tag @article.photo.url(:bright_face) %>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
-
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path  @article.photo%>');">
+  <div class="card-c ategory">Popular</div>
+  <div class="card-description">
+    <h2><%= @article.title %></h2>
+    <p><%= @article.body %></p>
+  </div>
+  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+</div>
+<br>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
